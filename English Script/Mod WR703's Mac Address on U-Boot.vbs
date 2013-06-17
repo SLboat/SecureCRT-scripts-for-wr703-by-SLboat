@@ -32,7 +32,9 @@ Sub Main
 		else
 			mac_addr = InputBox("Please input a vaild mac address,like [14-CF-92-87-07-A8]","Change Mac Address in uboot",mac_addr)
 		End If
-	wend
+	Wend
+	' just for human readable:)
+	humanble_mac_addr=UCase(mac_addr)
 	' take care the mac addr,replace all the "-" letter,and make low case
 	mac_addr = LCase(Replace(mac_addr, "-", ""))
 	' get the first 4bit,and last 4bit
@@ -88,7 +90,7 @@ Sub Main
 	'report if work well
 	crt.Screen.Send "md 0x9f01fc00 2" & chr(13)
 	If crt.screen.WaitForString( mac_look_in_ram ,wait_second) Then
-		MsgBox "The mac mod is done,and it has pass the check!" & Chr(13) & "Now you may need boot in openwrt and regenerate the wifi profile" & Chr(13) & "you can run the [Openwrt wifi detect.vbs]script on openwrt to do this:)"
+		MsgBox "The mac mod is done,Now is[" & mac_addr & "],and it has pass the check!" & Chr(13) & "Now you may need boot in openwrt and regenerate the wifi profile" & Chr(13) & "You can run the [Openwrt wifi detect.vbs]script on openwrt to do this:)"
 	Else
 		MsgBox "Flash Write seems faild,IT dosen't fit[" & mac_look_in_ram & "],please try again"
 	End If 
