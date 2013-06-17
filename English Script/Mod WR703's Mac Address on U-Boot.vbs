@@ -90,13 +90,14 @@ Sub Main
 	'report if work well
 	crt.Screen.Send "md 0x9f01fc00 2" & chr(13)
 	If crt.screen.WaitForString( mac_look_in_ram ,wait_second) Then
+		'you may like push the enter to reset just now
+		 crt.Screen.Send "reset"
 		MsgBox "The mac mod is done,Now is[" & mac_addr & "],and it has pass the check!" & Chr(13) & "Now you may need boot in openwrt and regenerate the wifi profile" & Chr(13) & "You can run the [Openwrt wifi detect.vbs]script on openwrt to do this:)"
 	Else
 		MsgBox "Flash Write seems faild,IT dosen't fit[" & mac_look_in_ram & "],please try again"
 	End If 
 
-	Exit sub	
-	' crt.Screen.Send "reset" & chr(13)
+	Exit sub		
 End Sub
 
 Sub Tips()
