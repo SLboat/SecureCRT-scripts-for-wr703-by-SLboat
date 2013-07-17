@@ -1,6 +1,8 @@
 ﻿#$language = "VBScript"
 #$interface = "1.0"
 
+' todo：它目前的检测需要网线在上面才行
+
 ' 看起来同步之后的事情很糟糕，变得郁闷
 crt.Screen.Synchronous = false
 
