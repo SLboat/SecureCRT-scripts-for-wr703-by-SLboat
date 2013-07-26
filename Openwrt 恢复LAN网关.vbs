@@ -21,7 +21,7 @@ Sub Main
 		crt.Screen.Send vbCr
 		' 等待两秒就够了
 		If crt.screen.WaitForString("link dow", 2) <> True Then
-			crt.Screen.Send "Faild to do My job:(" '这看起来不太妙
+			crt.Screen.Send "echo 'Faild to do My job:('" '这看起来不太妙
 			MsgBox "Faild to do My job:("
 			Exit Sub
 		End If

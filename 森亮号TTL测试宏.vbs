@@ -1,4 +1,4 @@
-#$language = "VBScript"
+﻿#$language = "VBScript"
 #$interface = "1.0"
 
 '当前版本：Ver.a3
@@ -8,6 +8,7 @@
 
 'todo:
 '1: 自己了解自己是否检测成功-声音提醒？
+'2: 使用与管道来判断是否完成了任务
 
 ' 看起来同步之后的事情很糟糕，变得郁闷
 crt.Screen.Synchronous = false
