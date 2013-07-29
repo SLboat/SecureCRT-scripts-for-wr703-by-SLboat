@@ -3,6 +3,7 @@
 
 ' 看起来同步之后的事情很糟糕，变得郁闷
 crt.Screen.Synchronous = false
+' todo：如果提醒没有网线，分开来提醒
 
 ' 网关设置到192.168.2.1
 const work_off = "uci set network.lan.ipaddr=192.168.2.1 && uci commit && /etc/init.d/network restart"
