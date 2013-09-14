@@ -28,7 +28,7 @@ Sub Main
 			MsgBox "Erased sectors seems faild:("
 			Exit Sub
 		End If 
-		crt.Sleep 1000 '稍等一些时候
+		crt.Sleep 2000 '稍等一些时候
 		' 复制16M
 		crt.Screen.Send "cp.b 0x81020000 0x9f020000 0x7c0000" & Chr(13)
 		If Not crt.screen.WaitForString("done",20) Then
@@ -36,4 +36,8 @@ Sub Main
 			Exit Sub
 			' 一起完成了
 		End If 
+		'you may like push the enter to reset just now
+		 crt.Screen.Send "reset"
+		'送别
+		MsgBox "Reboot!See You Luckly!"
 End Sub

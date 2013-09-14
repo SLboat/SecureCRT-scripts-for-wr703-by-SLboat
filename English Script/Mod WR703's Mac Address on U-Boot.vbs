@@ -4,6 +4,9 @@
 'mod uboot's mac address for SecureCRT
 'this made by slboat,change a mac address,what ever you like,maybe it can help you:)
 
+'todo: auto check the "autobooting in 1 second..."
+'todo: add some flag to check for not specal orgin firmware
+
 crt.Screen.Synchronous = false
 
 'how long it wait for the console...
@@ -64,7 +67,7 @@ Sub Main
 	'check the ram if same
 	crt.Screen.Send "md 0x8101fc00 2 " & chr(13)
 	If Not crt.screen.WaitForString( mac_look_in_ram ,wait_second) Then
-		MsgBox "Ram Write seems faild,IT dosen't fit[" & mac_look_in_ram & "],please try again"
+		MsgBox "Ram Write seems faild,It dosen't fit[" & mac_look_in_ram & "],please try again"
 		Exit sub
 	End If 
 	
